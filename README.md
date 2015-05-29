@@ -1,6 +1,6 @@
 
 
-* Common wordpress
+# Common wordpress
 - function.php
 - .htaccess
 
