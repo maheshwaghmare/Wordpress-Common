@@ -1,3 +1,7 @@
 
 
-# Common htaccess for load time optimization
+* Common wordpress
+- function.php
+- .htaccess
+
+for load time optimization & other stuff.
