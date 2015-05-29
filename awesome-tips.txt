@@ -1,0 +1,40 @@
+
+/*
+ *  Defer loading javascript
+ *
+ *  source: [https://www.feedthebot.com/pagespeed/defer-loading-javascript.html] 
+ *-------------------------------------------------------------------------------------------*/
+ 
+ /* E.g. 1] Using - Inline Script
+  *-------------------------------------------------------------------------------------------*/
+  <script type="text/javascript">
+   function sleep(ms)
+  	{
+  		var dt = new Date();
+  		dt.setTime(dt.getTime() + ms);
+  		while (new Date().getTime() < dt.getTime());
+  	}
+  	sleep(2000);
+    document.getElementById('inner').innerHTML = "Hello World!";
+  </script>
+
+
+ /* E.g. 2] Using - "defer" for external script
+  *-------------------------------------------------------------------------------------------*/
+  <script src="defer.js" defer></script>
+
+
+ /* E.g. 3] Using - recommended code
+  *-------------------------------------------------------------------------------------------*/
+  <script type="text/javascript">
+    function downloadJSAtOnload() {
+      var element = document.createElement("script");
+    element.src = "FILE_NAME.js";   // Add here your js file name with exact URL for - [defer loading]
+      document.body.appendChild(element);
+    }
+    if (window.addEventListener)
+      window.addEventListener("load", downloadJSAtOnload, false);
+    else if (window.attachEvent)
+      window.attachEvent("onload", downloadJSAtOnload);
+    else window.onload = downloadJSAtOnload;
+  </script>
