@@ -30,3 +30,19 @@ function custom_taxonomies_rewrite(){
     add_image_size( 'homepage-thumb', 220, 180, true ); // (cropped)
   }
 */
+
+
+/**
+ *  Defer parsing of JavaScripts
+ *  @since 1.0
+ *-------------------------------------------------------------------*/  
+/*
+function defer_parsing_js( $url ) {
+	if ( ! is_admin() ) {
+		return "$url' defer='defer";
+	} else {
+		return $url;
+	}
+}
+add_filter( 'clean_url', 'defer_parsing_js', 10, 1 );
+*/
