@@ -1,10 +1,17 @@
 ##################################################################################################################
-## 1) Compress HTML, CSS, JavaScript, Text, XML and fonts
-## 2) EXPIRES CACHING
+## 3) Redirect - WWW to non WWW
+## 2) Compress HTML, CSS, JavaScript, Text, XML and fonts
+## 1) EXPIRES CACHING
 ##################################################################################################################
 
+## 3) Redirect - WWW to non WWW
+#  RewriteEngine On
+#  RewriteBase /
+#  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+#  RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
 ##################################################################################################################
-## 1) Compress HTML, CSS, JavaScript, Text, XML and fonts
+## 2) Compress HTML, CSS, JavaScript, Text, XML and fonts
 ##################################################################################################################
 
 <IfModule mod_deflate.c>
@@ -38,7 +45,7 @@
 </IfModule>
 
 ##################################################################################################################
-## 2) EXPIRES CACHING
+## 1) EXPIRES CACHING
 ##################################################################################################################
 <IfModule mod_mime.c>
   AddType text/richtext .rtf .rtx
