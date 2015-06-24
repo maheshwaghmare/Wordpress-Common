@@ -1,14 +1,18 @@
 ##################################################################################################################
-## 3) Redirect - WWW to non WWW
+## 4) Redirect - All 404 to 404.html
+## 3) Redirect - WWW to Non WWW
 ## 2) Compress HTML, CSS, JavaScript, Text, XML and fonts
 ## 1) EXPIRES CACHING
 ##################################################################################################################
 
+## 4) Redirect - All 404 to 404.html
+ErrorDocument 404 /404.html
+
 ## 3) Redirect - WWW to non WWW
-#  RewriteEngine On
-#  RewriteBase /
-#  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-#  RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
 ##################################################################################################################
 ## 2) Compress HTML, CSS, JavaScript, Text, XML and fonts
